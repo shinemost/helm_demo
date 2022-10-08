@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: my-helm-demo-route
+  namespace: traffic
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`traffic.hjfu2022.tk`) && PathPrefix(`/v1`)
+      services:
+        - name: my-helm-demo-service
+          port: 8989

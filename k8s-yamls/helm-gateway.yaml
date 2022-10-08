@@ -1,0 +1,14 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: Gateway
+metadata:
+  name: helm-demo-gateway
+  namespace: traffic
+spec:
+  gatewayClassName: traefik
+  listeners:
+  - allowedRoutes:
+      namespaces:
+        from: Same
+    name: web
+    port: 8000
+    protocol: HTTP
