@@ -8,8 +8,9 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.service.port }}
       protocol: TCP
+      nodePort: {{ .Values.service.nodePort }}
       name: http
   selector:
     {{- include "my-helm-demo.selectorLabels" . | nindent 4 }}
