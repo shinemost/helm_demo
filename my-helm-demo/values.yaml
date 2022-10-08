@@ -8,7 +8,7 @@ image:
   repository: supertain147/my-helm-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v2"
+  tag: "v3"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -35,10 +35,10 @@ securityContext: {}
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8989
+  nodePort: 31889
 
 ingress:
   enabled: false
