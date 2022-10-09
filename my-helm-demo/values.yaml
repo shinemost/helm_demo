@@ -80,3 +80,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+readinessProbe:
+            httpGet:
+              path: /v1/query
+              port: 8989
