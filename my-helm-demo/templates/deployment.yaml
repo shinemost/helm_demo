@@ -44,7 +44,7 @@ spec:
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.httpGet.path }}
-              port: {{ .Values.readinessProbe.httpGet.path }}
+              port: {{ .Values.readinessProbe.httpGet.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
